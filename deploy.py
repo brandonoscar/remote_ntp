@@ -143,9 +143,10 @@ def generate_rebel_sources():
         WORKING_DIR, 'remote_ntp_offline_resources.h')
 
     with open(resources_path, 'w') as resources_file:
-        resources_file.write('namespace rebel {\n\n')
+        resources_file.write('#include <array>\n\n')
+        resources_file.write('namespace rebel::detail {\n\n')
         resources_file.write(
-            'const RemoteNtpOfflineResource kRemoteNtpOfflineResources[] = {\n')
+            'static constexpr auto kRemoteNtpOfflineResources = std::to_array<RemoteNtpOfflineResource>({\n')
 
         for source in sources:
             path = source['file_path']
@@ -155,10 +156,8 @@ def generate_rebel_sources():
             cpp = f'{{ {identifier}, "{path}", "{mime_type}" }},\n'
             resources_file.write('    ' + cpp)
 
-        resources_file.write('};\n\n')
-        resources_file.write(
-            f'const size_t kRemoteNtpOfflineResourcesSize = {len(sources)};\n\n')
-        resources_file.write('}  // namespace rebel\n')
+        resources_file.write('});\n\n')
+        resources_file.write('}  // namespace rebel::detail\n')
 
 
 def main():
