@@ -1,0 +1,220 @@
+/* Helixis New Tab Page Styles */
+
+.helixis-ntp {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #05030b 0%, #050816 100%);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.helixis-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(155, 92, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.helixis-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.helixis-wordmark {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #9b5cff;
+}
+
+.helixis-chip {
+  font-size: 0.8rem;
+  background: rgba(155, 92, 255, 0.2);
+  color: #9b5cff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(155, 92, 255, 0.3);
+}
+
+.helixis-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.helixis-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.helixis-logo {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  background: linear-gradient(45deg, #9b5cff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(155, 92, 255, 0.5);
+}
+
+.helixis-tagline {
+  font-size: 1.1rem;
+  margin: 0 0 40px 0;
+  opacity: 0.8;
+  max-width: 500px;
+  line-height: 1.4;
+}
+
+.helixis-search {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  border: 1px solid rgba(155, 92, 255, 0.2);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.helixis-search input {
+  flex: 1;
+  padding: 15px 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.helixis-search input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.helixis-search-button {
+  padding: 15px 25px;
+  background: #9b5cff;
+  color: white;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.helixis-search-button:hover {
+  background: #8a4cff;
+}
+
+.helixis-quick-section {
+  text-align: center;
+  max-width: 800px;
+}
+
+.helixis-quick-header h2 {
+  font-size: 1.5rem;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.helixis-quick-header span {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.helixis-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.helixis-quick-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(155, 92, 255, 0.2);
+}
+
+.helixis-quick-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(155, 92, 255, 0.3);
+  background: rgba(155, 92, 255, 0.1);
+  border-color: rgba(155, 92, 255, 0.5);
+}
+
+.helixis-quick-icon {
+  width: 40px;
+  height: 40px;
+  background: #9b5cff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.helixis-quick-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.helixis-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .helixis-logo {
+    font-size: 3rem;
+  }
+
+  .helixis-tagline {
+    font-size: 1rem;
+  }
+
+  .helixis-search {
+    max-width: 100%;
+  }
+
+  .helixis-quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .helixis-header {
+    position: relative;
+    top: auto;
+    left: auto;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}

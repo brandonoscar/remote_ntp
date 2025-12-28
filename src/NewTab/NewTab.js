@@ -1,135 +1,79 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import './NewTab.css';
-import styled from 'styled-components';
-
-import Search from './../Search';
+import './helixis.css';
 import BrowserThemeProvider from './../Theme';
 
-const PageWrapper = styled.div`
-  min-height: 100vh;
-  background: linear-gradient(135deg, #05030b 0%, #050816 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-`;
-
-const LogoTitle = styled.h1`
-  font-size: 4rem;
-  font-weight: 700;
-  margin: 0;
-  background: linear-gradient(45deg, #9b5cff, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 20px rgba(155, 92, 255, 0.5);
-  text-align: center;
-`;
-
-const Tagline = styled.p`
-  font-size: 1.2rem;
-  margin: 10px 0 40px 0;
-  opacity: 0.8;
-  text-align: center;
-`;
-
-const SearchWrapper = styled.div`
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 40px;
-`;
-
-const QuickActions = styled.div`
-  display: flex;
-  gap: 20px;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const ActionCard = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(155, 92, 255, 0.2);
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 30px rgba(155, 92, 255, 0.3);
-    background: rgba(155, 92, 255, 0.1);
-  }
-`;
-
-const ActionIcon = styled.div`
-  font-size: 2rem;
-  margin-bottom: 10px;
-`;
-
-const ActionLabel = styled.span`
-  font-size: 0.9rem;
-  font-weight: 500;
-`;
-
-const FooterText = styled.footer`
-  font-size: 0.8rem;
-  opacity: 0.6;
-  text-align: center;
-`;
-
-class NewTab extends React.Component {
-  componentDidMount() {
+export default function HelixisNewTab() {
+  useEffect(() => {
     document.title = 'Helixis';
-  }
+  }, []);
 
-  render = () => {
-    return (
-      <BrowserThemeProvider>
-        <CssBaseline />
-        <PageWrapper>
-          <LogoTitle>Helixis</LogoTitle>
-          <Tagline>AI-powered browser workspace</Tagline>
-          <SearchWrapper>
-            <Search />
-          </SearchWrapper>
-          <QuickActions>
-            <ActionCard href="https://mail.google.com">
-              <ActionIcon>📧</ActionIcon>
-              <ActionLabel>Gmail</ActionLabel>
-            </ActionCard>
-            <ActionCard href="https://calendar.google.com">
-              <ActionIcon>📅</ActionIcon>
-              <ActionLabel>Calendar</ActionLabel>
-            </ActionCard>
-            <ActionCard href="https://drive.google.com">
-              <ActionIcon>☁️</ActionIcon>
-              <ActionLabel>Drive</ActionLabel>
-            </ActionCard>
-            <ActionCard href="https://buildium.com">
-              <ActionIcon>🏢</ActionIcon>
-              <ActionLabel>Buildium</ActionLabel>
-            </ActionCard>
-            <ActionCard href="#">
-              <ActionIcon>⚙️</ActionIcon>
-              <ActionLabel>Custom</ActionLabel>
-            </ActionCard>
-          </QuickActions>
-          <FooterText>Helixis • Agentic browser copilot</FooterText>
-        </PageWrapper>
-      </BrowserThemeProvider>
-    );
-  };
+  const quickLinks = [
+    { label: "Gmail", href: "https://mail.google.com" },
+    { label: "Calendar", href: "https://calendar.google.com" },
+    { label: "Drive", href: "https://drive.google.com" },
+    { label: "Buildium", href: "https://app.buildium.com" },
+    { label: "Command Center", href: "https://helixis.com" },
+  ];
+
+  return (
+    <BrowserThemeProvider>
+      <CssBaseline />
+      <div className="helixis-ntp">
+        <div className="helixis-bg-glow" />
+
+        <header className="helixis-header">
+          <span className="helixis-wordmark">Helixis</span>
+          <span className="helixis-chip">Agentic browser copilot</span>
+        </header>
+
+        <main className="helixis-main">
+          <section className="helixis-hero">
+            <h1 className="helixis-logo">Helixis</h1>
+            <p className="helixis-tagline">
+              AI-powered browser workspace for operators, property managers, and founders.
+            </p>
+
+            <div className="helixis-search">
+              <input
+                type="text"
+                placeholder="Search the web or type a command…"
+                aria-label="Search Helixis or type a URL"
+              />
+              <button className="helixis-search-button">Search</button>
+            </div>
+          </section>
+
+          <section className="helixis-quick-section">
+            <div className="helixis-quick-header">
+              <h2>Quick actions</h2>
+              <span>Jump back into your daily tools</span>
+            </div>
+
+            <div className="helixis-quick-grid">
+              {quickLinks.map((link) => (
+                <a
+                  key={link.label}
+                  className="helixis-quick-card"
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="helixis-quick-icon">
+                    {link.label.charAt(0)}
+                  </div>
+                  <div className="helixis-quick-label">{link.label}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+        </main>
+
+        <footer className="helixis-footer">
+          <span>Helixis • AI-powered browser</span>
+        </footer>
+      </div>
+    </BrowserThemeProvider>
+  );
 }
-
-export default NewTab;
