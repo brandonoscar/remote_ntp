@@ -1,220 +1,219 @@
-/* Helixis New Tab Page Styles */
+:root {
+  --hx-bg: #05030b;
+  --hx-bg-soft: #050816;
+  --hx-accent: #9b5cff;
+  --hx-accent-soft: rgba(155, 92, 255, 0.35);
+  --hx-text-main: #f9f5ff;
+  --hx-text-subtle: #a4a1b8;
+  --hx-border-soft: rgba(255, 255, 255, 0.06);
+}
+
+html,
+body,
+.helixis-ntp {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 .helixis-ntp {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #05030b 0%, #050816 100%);
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   position: relative;
-  overflow-x: hidden;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #13062b 0, var(--hx-bg) 55%);
+  color: var(--hx-text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .helixis-bg-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(155, 92, 255, 0.1) 0%, transparent 70%);
   pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 40% 0, var(--hx-accent-soft) 0, transparent 55%);
+  opacity: 0.8;
+  z-index: 0;
 }
 
 .helixis-header {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  position: relative;
+  z-index: 1;
+  padding: 20px 48px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  z-index: 10;
+  gap: 12px;
+  justify-content: flex-start;
 }
 
 .helixis-wordmark {
-  font-size: 1.2rem;
   font-weight: 600;
-  color: #9b5cff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--hx-text-subtle);
 }
 
 .helixis-chip {
-  font-size: 0.8rem;
-  background: rgba(155, 92, 255, 0.2);
-  color: #9b5cff;
-  padding: 4px 8px;
-  border-radius: 12px;
-  border: 1px solid rgba(155, 92, 255, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hx-border-soft);
+  background: rgba(8, 5, 20, 0.7);
+  font-size: 11px;
+  color: var(--hx-text-subtle);
 }
 
 .helixis-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-  position: relative;
-  z-index: 5;
+  padding: 32px 24px 40px;
 }
 
 .helixis-hero {
+  max-width: 720px;
   text-align: center;
-  margin-bottom: 60px;
+  margin-top: 72px;
+  margin-bottom: 48px;
 }
 
 .helixis-logo {
-  font-size: 4rem;
+  font-size: 56px;
   font-weight: 700;
-  margin: 0 0 10px 0;
-  background: linear-gradient(45deg, #9b5cff, #ffffff);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  background: linear-gradient(135deg, #ffffff, #c7b3ff, var(--hx-accent));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 20px rgba(155, 92, 255, 0.5);
+  color: transparent;
 }
 
 .helixis-tagline {
-  font-size: 1.1rem;
-  margin: 0 0 40px 0;
-  opacity: 0.8;
-  max-width: 500px;
-  line-height: 1.4;
+  margin: 0;
+  color: var(--hx-text-subtle);
+  font-size: 15px;
 }
 
 .helixis-search {
+  margin-top: 28px;
   display: flex;
-  max-width: 500px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 25px;
-  border: 1px solid rgba(155, 92, 255, 0.2);
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  gap: 8px;
+  justify-content: center;
 }
 
 .helixis-search input {
-  flex: 1;
-  padding: 15px 20px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 1rem;
+  width: min(560px, 90vw);
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--hx-border-soft);
+  background: rgba(6, 5, 18, 0.95);
+  color: var(--hx-text-main);
+  font-size: 14px;
   outline: none;
+  box-shadow: 0 0 0 1px transparent;
 }
 
 .helixis-search input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: #6e6a86;
+}
+
+.helixis-search input:focus {
+  border-color: var(--hx-accent);
+  box-shadow: 0 0 0 1px var(--hx-accent-soft), 0 18px 40px rgba(0, 0, 0, 0.6);
 }
 
 .helixis-search-button {
-  padding: 15px 25px;
-  background: #9b5cff;
-  color: white;
+  padding: 0 18px;
+  border-radius: 999px;
   border: none;
-  border-radius: 0 25px 25px 0;
-  cursor: pointer;
+  font-size: 14px;
   font-weight: 500;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--hx-accent), #c27dff);
+  color: #0b0318;
+  box-shadow: 0 10px 30px rgba(155, 92, 255, 0.45);
 }
 
 .helixis-search-button:hover {
-  background: #8a4cff;
+  transform: translateY(-1px);
 }
 
 .helixis-quick-section {
-  text-align: center;
-  max-width: 800px;
+  width: min(960px, 100%);
+}
+
+.helixis-quick-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
 }
 
 .helixis-quick-header h2 {
-  font-size: 1.5rem;
-  margin: 0 0 5px 0;
-  font-weight: 600;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .helixis-quick-header span {
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 12px;
+  color: var(--hx-text-subtle);
 }
 
 .helixis-quick-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
 }
 
 .helixis-quick-card {
+  position: relative;
+  padding: 14px 14px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--hx-border-soft);
+  background: linear-gradient(145deg, #080515, #05030c);
+  text-decoration: none;
+  color: var(--hx-text-main);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(155, 92, 255, 0.2);
+  gap: 8px;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+    border-color 0.12s ease-out;
 }
 
 .helixis-quick-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(155, 92, 255, 0.3);
-  background: rgba(155, 92, 255, 0.1);
-  border-color: rgba(155, 92, 255, 0.5);
+  transform: translateY(-2px);
+  border-color: rgba(155, 92, 255, 0.7);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
 }
 
 .helixis-quick-icon {
-  width: 40px;
-  height: 40px;
-  background: #9b5cff;
-  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 14px;
+  background: radial-gradient(circle at 30% 0, #ffffff, var(--hx-accent));
+  color: #13041f;
   font-weight: 600;
-  margin-bottom: 10px;
-  color: white;
 }
 
 .helixis-quick-label {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 13px;
 }
 
 .helixis-footer {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.8rem;
-  opacity: 0.6;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .helixis-logo {
-    font-size: 3rem;
-  }
-
-  .helixis-tagline {
-    font-size: 1rem;
-  }
-
-  .helixis-search {
-    max-width: 100%;
-  }
-
-  .helixis-quick-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .helixis-header {
-    position: relative;
-    top: auto;
-    left: auto;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
+  position: relative;
+  z-index: 1;
+  padding: 16px 32px 20px;
+  font-size: 11px;
+  color: var(--hx-text-subtle);
+  text-align: center;
 }
