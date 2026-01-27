@@ -1,0 +1,22 @@
+{
+  "name": "browser-api",
+  "version": "0.1.0",
+  "description": "Library for accessing Rebel Browser APIs",
+  "author": "Tim Flynn <timothy.flynn@viasat.com>",
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "scripts": {
+    "docs": "./bin/generate_docs.js -m ./index.js -s ./lib/*.js -d ./docs",
+    "format": "prettier --write ./index.js ./**/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RebelBrowser/browser_api.git"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^7.1.1",
+    "prettier": "^2.1.2",
+    "yargs": "^15.4.1"
+  }
+}
