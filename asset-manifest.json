@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/remote_ntp/static/css/main.494cafe2.css",
-    "main.js": "/remote_ntp/static/js/main.213223dd.js",
+    "main.css": "/remote_ntp/static/css/main.58fd7137.css",
+    "main.js": "/remote_ntp/static/js/main.3458cf9c.js",
     "static/media/UniNeueLight.ttf": "/remote_ntp/static/media/UniNeueLight.8715c10a87ec09f2919f.ttf",
     "static/media/UniNeueHeavy.ttf": "/remote_ntp/static/media/UniNeueHeavy.d61a3300ea1e3a914ed1.ttf",
     "static/media/UniNeueBold.ttf": "/remote_ntp/static/media/UniNeueBold.a4519da7dd80cb688e22.ttf",
     "service-worker.js": "/remote_ntp/service-worker.js",
     "index.html": "/remote_ntp/index.html",
-    "main.494cafe2.css.map": "/remote_ntp/static/css/main.494cafe2.css.map",
-    "main.213223dd.js.map": "/remote_ntp/static/js/main.213223dd.js.map"
+    "static/media/icon_clock.svg": "/remote_ntp/static/media/icon_clock.9e7dec296c6704f690b4.svg",
+    "static/media/icon_search.svg": "/remote_ntp/static/media/icon_search.0faebb096bd19b636a05.svg",
+    "static/media/icon_clear.svg": "/remote_ntp/static/media/icon_clear.07791c29165ba7810865.svg",
+    "static/media/icon_calculator.svg": "/remote_ntp/static/media/icon_calculator.39c8605931085be00099.svg",
+    "main.58fd7137.css.map": "/remote_ntp/static/css/main.58fd7137.css.map",
+    "main.3458cf9c.js.map": "/remote_ntp/static/js/main.3458cf9c.js.map"
   },
   "entrypoints": [
-    "static/css/main.494cafe2.css",
-    "static/js/main.213223dd.js"
+    "static/css/main.58fd7137.css",
+    "static/js/main.3458cf9c.js"
   ]
 }
