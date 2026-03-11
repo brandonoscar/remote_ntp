@@ -4,7 +4,7 @@ name: Build and deploy to Pages
 on:
   # Runs on pushes to this branch
   push:
-    branches: ["rebel_126.0.6478.127"]
+    branches: ["rebel_126.0.6478.127", "claude/redesign-ntp-page-XhDQZ"]
 
   # Allow manual runs from the Actions tab
   workflow_dispatch:
