@@ -1,20 +1,4 @@
 body {
   --footer-height: 12px;
-
-  padding-bottom: calc(var(--footer-height) * 4);
-}
-
-/* Override Search component styles for larger appearance */
-#search-container {
-  --search-box-height: 60px;
-  max-width: 600px;
-  padding-top: 0;
-  margin: 0;
-}
-
-#search {
-  font-size: 18px;
-  height: 60px;
-  border-radius: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding-bottom: 0;
 }
