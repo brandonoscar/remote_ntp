@@ -2,98 +2,195 @@
  * Helixis Search Skin — cosmetic restyle of Google Search results.
  * This stylesheet ONLY modifies colors and fonts on existing elements.
  * It does NOT hide results, inject iframes, or alter page structure.
+ *
+ * All selectors scoped to body.helixis-search-skin (added by search_skin.js)
+ * to avoid conflicts with Google's own dark mode and ensure our styles apply.
  */
 
-/* Top search bar accent */
-.gb_Ld,
-#searchform,
-.sfbg {
+/* ===== Page background ===== */
+body.helixis-search-skin,
+body.helixis-search-skin #appbar,
+body.helixis-search-skin #rcnt,
+body.helixis-search-skin #cnt,
+body.helixis-search-skin #main,
+body.helixis-search-skin #center_col,
+body.helixis-search-skin #rhs,
+body.helixis-search-skin .sfbg,
+body.helixis-search-skin #searchform {
+  background-color: #0a0515 !important;
+  color: #d4d0e8 !important;
+}
+
+/* ===== Top header / search bar area ===== */
+body.helixis-search-skin .gb_Ld,
+body.helixis-search-skin .gb_Fd,
+body.helixis-search-skin #searchform,
+body.helixis-search-skin .sfbg,
+body.helixis-search-skin header,
+body.helixis-search-skin .o3j99.n1xJcf.Ne6nSd,
+body.helixis-search-skin .XDyW0e,
+body.helixis-search-skin .minidiv .sfbg {
   background-color: #0d0520 !important;
 }
 
-/* Search input styling */
-.gLFyf,
-.RNNXgb,
-textarea.gLFyf {
+/* ===== Search input ===== */
+body.helixis-search-skin .gLFyf,
+body.helixis-search-skin .RNNXgb,
+body.helixis-search-skin textarea.gLFyf,
+body.helixis-search-skin .a4bIc,
+body.helixis-search-skin .SDkEP {
   background-color: #110826 !important;
   color: #f0ecff !important;
   border-color: rgba(139, 92, 246, 0.3) !important;
 }
 
-.gLFyf:focus,
-textarea.gLFyf:focus {
+body.helixis-search-skin .gLFyf:focus,
+body.helixis-search-skin textarea.gLFyf:focus {
   border-color: #8B5CF6 !important;
   box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25) !important;
 }
 
-/* Search button highlight */
-.Tg7LZd .aajZCb,
-.FPdoLc input[type="submit"],
-.gNO89b {
+/* Search suggestions dropdown */
+body.helixis-search-skin .aajZCb,
+body.helixis-search-skin .lnXdpd,
+body.helixis-search-skin .G43f7e,
+body.helixis-search-skin .OBMEnb,
+body.helixis-search-skin .pcTkSc {
+  background-color: #110826 !important;
+}
+
+/* ===== Search button ===== */
+body.helixis-search-skin .Tg7LZd .aajZCb,
+body.helixis-search-skin .FPdoLc input[type="submit"],
+body.helixis-search-skin .gNO89b,
+body.helixis-search-skin .nDcEnd {
   background-color: #6D28D9 !important;
   color: #fff !important;
 }
 
-/* Google logo area subtle tint — does NOT add branding */
-#logo img,
-.lnXdpd {
-  filter: hue-rotate(240deg) saturate(0.6);
-}
-
-/* Navigation tabs (All, Images, News, etc.) */
-.hdtb-mitem.hdtb-msel,
-.hdtb-mitem a:hover {
+/* ===== Navigation tabs (All, Images, News, etc.) ===== */
+body.helixis-search-skin .hdtb-mitem.hdtb-msel,
+body.helixis-search-skin .hdtb-mitem a:hover {
   border-bottom-color: #8B5CF6 !important;
   color: #8B5CF6 !important;
 }
 
-/* Link colors */
-.LC20lb {
-  color: #c4b5fd !important;
+body.helixis-search-skin .hdtb-mitem a {
+  color: #a4a1b8 !important;
 }
 
-a:visited .LC20lb {
-  color: #9a8cc4 !important;
-}
-
-/* Snippet text */
-.VwiC3b,
-.yXK7lf,
-.lEBKkf span {
-  color: #c9c5d8 !important;
-}
-
-/* URL breadcrumb */
-.NJjxre .qLRx3b,
-cite,
-.NJjxre cite {
-  color: #7c6faf !important;
-}
-
-/* Page background */
-body,
-#appbar,
-#rcnt,
-.sfbg,
-#searchform {
-  background-color: #0a0515 !important;
-}
-
-/* Footer */
-#footcnt,
-#fbar {
-  background-color: #080412 !important;
-}
-
-/* "People also ask" section */
-.related-question-pair {
+body.helixis-search-skin .MUFPAc,
+body.helixis-search-skin .ynAwRc {
+  background-color: #0d0520 !important;
   border-color: rgba(139, 92, 246, 0.15) !important;
 }
 
-/* Side panel knowledge card */
-.kp-wholepage,
-.I6TXqe,
-.osrp-blk {
+/* ===== Search result titles ===== */
+body.helixis-search-skin .LC20lb,
+body.helixis-search-skin h3 {
+  color: #c4b5fd !important;
+}
+
+body.helixis-search-skin a:visited .LC20lb,
+body.helixis-search-skin a:visited h3 {
+  color: #9a8cc4 !important;
+}
+
+/* ===== Snippet / description text ===== */
+body.helixis-search-skin .VwiC3b,
+body.helixis-search-skin .yXK7lf,
+body.helixis-search-skin .lEBKkf span,
+body.helixis-search-skin .IsZvec,
+body.helixis-search-skin .aCOpRe,
+body.helixis-search-skin .st {
+  color: #c9c5d8 !important;
+}
+
+/* ===== URL breadcrumbs ===== */
+body.helixis-search-skin .NJjxre .qLRx3b,
+body.helixis-search-skin cite,
+body.helixis-search-skin .NJjxre cite,
+body.helixis-search-skin .byrV5b cite,
+body.helixis-search-skin .tjvcx {
+  color: #7c6faf !important;
+}
+
+/* ===== AI Overview / featured snippets ===== */
+body.helixis-search-skin .ULSxyf,
+body.helixis-search-skin .xpdopen,
+body.helixis-search-skin .g,
+body.helixis-search-skin .hlcw0c,
+body.helixis-search-skin .MjjYud {
+  border-color: rgba(139, 92, 246, 0.1) !important;
+}
+
+body.helixis-search-skin .wDYxhc,
+body.helixis-search-skin .LGOjhe,
+body.helixis-search-skin .kno-rdesc {
+  color: #c9c5d8 !important;
+}
+
+/* ===== "People also ask" ===== */
+body.helixis-search-skin .related-question-pair,
+body.helixis-search-skin .dnXCYb,
+body.helixis-search-skin .JolIg {
+  border-color: rgba(139, 92, 246, 0.15) !important;
+  background-color: #0e0720 !important;
+}
+
+/* "People also search for" */
+body.helixis-search-skin .IVvPP,
+body.helixis-search-skin .zVvuGd {
+  background-color: #0e0720 !important;
+  color: #c4b5fd !important;
+}
+
+/* ===== Knowledge panel (right side) ===== */
+body.helixis-search-skin .kp-wholepage,
+body.helixis-search-skin .I6TXqe,
+body.helixis-search-skin .osrp-blk,
+body.helixis-search-skin .kp-blk {
   background-color: #0e0720 !important;
   border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+body.helixis-search-skin .kp-header,
+body.helixis-search-skin .qrShPb {
+  color: #f0ecff !important;
+}
+
+/* ===== Footer ===== */
+body.helixis-search-skin #footcnt,
+body.helixis-search-skin #fbar,
+body.helixis-search-skin .fbar {
+  background-color: #080412 !important;
+  color: #7c6faf !important;
+}
+
+/* ===== Google pagination ===== */
+body.helixis-search-skin .SJajHc,
+body.helixis-search-skin td {
+  color: #a4a1b8 !important;
+}
+
+body.helixis-search-skin .SJajHc .NKTSme,
+body.helixis-search-skin a.fl {
+  color: #8B5CF6 !important;
+}
+
+/* ===== Misc card backgrounds ===== */
+body.helixis-search-skin .Ww4FFb,
+body.helixis-search-skin .tF2Cxc,
+body.helixis-search-skin .kvH3mc,
+body.helixis-search-skin .liYKde,
+body.helixis-search-skin .g {
+  background-color: transparent !important;
+}
+
+/* "Show more" button */
+body.helixis-search-skin .cUnQKe,
+body.helixis-search-skin .GNJvt {
+  background-color: #150b30 !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  color: #c4b5fd !important;
 }
