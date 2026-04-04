@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import './helixis.css';
@@ -9,12 +9,33 @@ export default function HelixisNewTab() {
     document.title = 'Helixis';
   }, []);
 
+  const handleSearchKeyDown = useCallback((e) => {
+    if (e.key !== 'Enter') return;
+    const query = e.target.value.trim();
+    if (!query) return;
+
+    // Bare domain (e.g. github.com) — navigate directly.
+    if (/^[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/.test(query)) {
+      window.location.href = 'https://' + query;
+      return;
+    }
+    // Already a URL — navigate directly.
+    if (/^https?:\/\//i.test(query)) {
+      window.location.href = query;
+      return;
+    }
+    // Otherwise, Google search.
+    window.location.href =
+      'https://www.google.com/search?q=' + encodeURIComponent(query);
+  }, []);
+
   const quickLinks = [
     { label: "Gmail", href: "https://mail.google.com" },
     { label: "Calendar", href: "https://calendar.google.com" },
     { label: "Drive", href: "https://drive.google.com" },
     { label: "Buildium", href: "https://app.buildium.com" },
-    { label: "Command Center", href: "https://helixis.com" },
+    { label: "News", href: "https://news.google.com" },
+    { label: "Messages", href: "https://messages.google.com" },
   ];
 
   return (
@@ -38,10 +59,11 @@ export default function HelixisNewTab() {
             <div className="helixis-search">
               <input
                 type="text"
-                placeholder="Search the web or type a command…"
+                placeholder="Search the web or type a URL..."
                 aria-label="Search Helixis or type a URL"
+                onKeyDown={handleSearchKeyDown}
+                autoFocus
               />
-              <button className="helixis-search-button">Search</button>
             </div>
           </section>
 

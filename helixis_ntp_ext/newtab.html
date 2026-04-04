@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Helixis</title>
+  <style>
+    :root {
+      --hx-bg: #05030b;
+      --hx-bg-soft: #050816;
+      --hx-accent: #8B5CF6;
+      --hx-accent-dark: #6D28D9;
+      --hx-accent-soft: rgba(139, 92, 246, 0.35);
+      --hx-text-main: #f9f5ff;
+      --hx-text-subtle: #a4a1b8;
+      --hx-border-soft: rgba(255, 255, 255, 0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #13062b 0%, var(--hx-bg) 55%);
+      color: var(--hx-text-main);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Background glow */
+    .bg-glow {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 40% 0%, var(--hx-accent-soft) 0%, transparent 55%);
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    /* Main content */
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 24px 40px;
+    }
+
+    /* Hero / branding section */
+    .hero {
+      text-align: center;
+      margin-top: 14vh;
+      margin-bottom: 48px;
+    }
+
+    .hero-logo {
+      width: 90px;
+      height: 90px;
+      filter: drop-shadow(0 0 24px rgba(139, 92, 246, 0.6));
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+      background: linear-gradient(135deg, #ffffff, #c7b3ff, var(--hx-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--hx-text-subtle);
+      font-size: 15px;
+    }
+
+    /* Search bar */
+    .search-bar {
+      position: relative;
+      width: min(580px, 90vw);
+      margin-top: 28px;
+    }
+
+    .search-bar img {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 14px 16px 14px 52px;
+      border-radius: 999px;
+      border: 1px solid var(--hx-border-soft);
+      background: rgba(6, 5, 18, 0.95);
+      color: var(--hx-text-main);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .search-bar input::placeholder { color: #6e6a86; }
+
+    .search-bar input:focus {
+      border-color: var(--hx-accent);
+      box-shadow: 0 0 0 2px var(--hx-accent-soft), 0 18px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Quick links */
+    .quick-section {
+      width: min(720px, 100%);
+      margin-top: 48px;
+    }
+
+    .quick-section h2 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--hx-text-subtle);
+      margin-bottom: 16px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 14px;
+    }
+
+    .quick-card {
+      padding: 16px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--hx-border-soft);
+      background: linear-gradient(145deg, #080515, #05030c);
+      text-decoration: none;
+      color: var(--hx-text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.12s, box-shadow 0.12s, border-color 0.12s;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(139, 92, 246, 0.7);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+    }
+
+    .quick-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 600;
+      background: radial-gradient(circle at 30% 0%, #ffffff, var(--hx-accent));
+      color: #13041f;
+    }
+
+    .quick-label { font-size: 12px; color: var(--hx-text-subtle); }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 16px 32px 20px;
+      font-size: 11px;
+      color: var(--hx-text-subtle);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <main>
+    <section class="hero">
+      <img class="hero-logo" src="helixis-house-v1.png" alt="Helixis logo" />
+      <h1>Helixis</h1>
+      <p>AI-powered browser workspace for operators, property managers, and founders.</p>
+
+      <div class="search-bar">
+        <img src="helixis-house-v1.png" alt="" />
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search the web or type a URL..."
+          autofocus
+        />
+      </div>
+    </section>
+
+    <section class="quick-section">
+      <h2>Quick actions</h2>
+      <div class="quick-grid" id="quick-links"></div>
+    </section>
+  </main>
+
+  <footer>Helixis &middot; AI-powered browser</footer>
+
+  <script>
+    // --- Quick link tiles ---
+    const quickLinks = [
+      { label: "Gmail",     href: "https://mail.google.com",     icon: "G" },
+      { label: "Calendar",  href: "https://calendar.google.com", icon: "C" },
+      { label: "Drive",     href: "https://drive.google.com",    icon: "D" },
+      { label: "Buildium",  href: "https://app.buildium.com",    icon: "B" },
+      { label: "News",      href: "https://news.google.com",     icon: "N" },
+      { label: "Messages",  href: "https://messages.google.com", icon: "M" },
+    ];
+
+    const grid = document.getElementById("quick-links");
+    quickLinks.forEach(function(link) {
+      const a = document.createElement("a");
+      a.className = "quick-card";
+      a.href = link.href;
+      a.innerHTML =
+        '<div class="quick-icon">' + link.icon + '</div>' +
+        '<div class="quick-label">' + link.label + '</div>';
+      grid.appendChild(a);
+    });
+
+    // --- Search logic ---
+    var input = document.getElementById("search-input");
+
+    input.addEventListener("keydown", function(e) {
+      if (e.key !== "Enter") return;
+
+      var query = input.value.trim();
+      if (!query) return;
+
+      // If it looks like a bare domain (e.g. github.com, foo.bar.com),
+      // navigate directly to it.
+      if (/^[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/.test(query)) {
+        window.location.href = "https://" + query;
+        return;
+      }
+
+      // If it already starts with http:// or https://, navigate directly.
+      if (/^https?:\/\//i.test(query)) {
+        window.location.href = query;
+        return;
+      }
+
+      // Otherwise, search Google.
+      window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
+    });
+  </script>
+</body>
+</html>

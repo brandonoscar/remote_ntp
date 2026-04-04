@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Helixis NTP Override",
+  "version": "1.0.3",
+  "description": "New Tab Page for the Helixis browser",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search*"],
+      "css": ["search_skin.css"],
+      "js": ["search_skin.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["helixis-house-v1.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "128": "helixis-house-v1.png"
+  }
+}

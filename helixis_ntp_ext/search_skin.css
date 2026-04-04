@@ -1,0 +1,99 @@
+/*
+ * Helixis Search Skin — cosmetic restyle of Google Search results.
+ * This stylesheet ONLY modifies colors and fonts on existing elements.
+ * It does NOT hide results, inject iframes, or alter page structure.
+ */
+
+/* Top search bar accent */
+.gb_Ld,
+#searchform,
+.sfbg {
+  background-color: #0d0520 !important;
+}
+
+/* Search input styling */
+.gLFyf,
+.RNNXgb,
+textarea.gLFyf {
+  background-color: #110826 !important;
+  color: #f0ecff !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+
+.gLFyf:focus,
+textarea.gLFyf:focus {
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25) !important;
+}
+
+/* Search button highlight */
+.Tg7LZd .aajZCb,
+.FPdoLc input[type="submit"],
+.gNO89b {
+  background-color: #6D28D9 !important;
+  color: #fff !important;
+}
+
+/* Google logo area subtle tint — does NOT add branding */
+#logo img,
+.lnXdpd {
+  filter: hue-rotate(240deg) saturate(0.6);
+}
+
+/* Navigation tabs (All, Images, News, etc.) */
+.hdtb-mitem.hdtb-msel,
+.hdtb-mitem a:hover {
+  border-bottom-color: #8B5CF6 !important;
+  color: #8B5CF6 !important;
+}
+
+/* Link colors */
+.LC20lb {
+  color: #c4b5fd !important;
+}
+
+a:visited .LC20lb {
+  color: #9a8cc4 !important;
+}
+
+/* Snippet text */
+.VwiC3b,
+.yXK7lf,
+.lEBKkf span {
+  color: #c9c5d8 !important;
+}
+
+/* URL breadcrumb */
+.NJjxre .qLRx3b,
+cite,
+.NJjxre cite {
+  color: #7c6faf !important;
+}
+
+/* Page background */
+body,
+#appbar,
+#rcnt,
+.sfbg,
+#searchform {
+  background-color: #0a0515 !important;
+}
+
+/* Footer */
+#footcnt,
+#fbar {
+  background-color: #080412 !important;
+}
+
+/* "People also ask" section */
+.related-question-pair {
+  border-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* Side panel knowledge card */
+.kp-wholepage,
+.I6TXqe,
+.osrp-blk {
+  background-color: #0e0720 !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
